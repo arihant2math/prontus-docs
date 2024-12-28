@@ -1,4 +1,7 @@
 ### Hugo template
+node_modules/
+package-lock.json
+
 # Generated files by hugo
 /public/
 /resources/_gen/
