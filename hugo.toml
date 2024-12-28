@@ -1,0 +1,43 @@
+baseURL = '/'
+languageCode = 'en-us'
+title = 'Prontus'
+longTitle = 'Prontus'
+description = 'The official website of the Prontus, a pronto frontend.'
+enableRobotsTXT = true
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
+
+[params]
+defaultTheme = "auto"
+theme_color = "#04c4a3"
+ShowCodeCopyButtons = true
+#ShowBreadCrumbs = true
+
+[params.assets]
+theme_color = "#04c4a3"
+msapplication_TileColor = "#04c4a3"
+
+[params.label]
+icon = "images/logo.png"
+alt = "Prontus Logo"
+iconHeight = 20
+
+[[params.socialIcons]]
+name = "github"
+url = "https://github.com/arihant2math/prontus/"
+
+[module]
+[[module.imports]]
+#path = "hugo-notice"
+
+[menus]
+[[menus.main]]
+name = 'Home'
+pageRef = '/'
+weight = 1
+
+[[menus.main]]
+name = 'About'
+pageRef = '/about'
+weight = 2

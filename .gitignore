@@ -1,6 +1,7 @@
 ### Hugo template
 node_modules/
 package-lock.json
+.idea/
 
 # Generated files by hugo
 /public/
