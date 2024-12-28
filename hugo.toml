@@ -27,8 +27,8 @@ iconHeight = 20
 name = "github"
 url = "https://github.com/arihant2math/prontus/"
 
-[module]
-[[module.imports]]
+#[module]
+#[[module.imports]]
 #path = "hugo-notice"
 
 [menus]
