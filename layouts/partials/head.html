@@ -1,0 +1,33 @@
+{{- partialCached "head/meta.html" . .Page -}}
+{{- /* Title */}}
+<title>{{ if .IsHome }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ end }}{{ site.Title }}</title>
+
+{{- /* Styles */}}
+{{ with resources.Get "css/styles.scss"
+| toCSS
+| postCSS (dict "config" "./assets/css/postcss.config.js")
+| minify
+| fingerprint
+}}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{ end }}
+
+{{- partialCached "head/scripts.html" . .Page -}}
+
+{{- partialCached "head/rss.html" . .Page -}}
+
+{{- partialCached "head/noscript.html" . .Page -}}
+
+{{- /* Misc */}}
+{{- if hugo.IsProduction | or (eq site.Params.env "production") }}
+{{- template "_internal/google_analytics.html" . }}
+{{- template "partials/templates/opengraph.html" . }}
+{{- template "partials/templates/twitter_cards.html" . }}
+{{- template "partials/templates/schema_json.html" . }}
+{{- end -}}
+
+{{- /* Turbo */}}
+<meta name="view-transition" content="same-origin" />
+
+
+{{- partial "extend_head.html" . -}}
